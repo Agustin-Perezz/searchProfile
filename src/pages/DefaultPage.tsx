@@ -1,15 +1,29 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { SearchBar } from "../components"
 import { User } from '../models/User';
 
 export const DefaultPage = () => {
 
-  const [user, setUser] = useState<User>();  
+  const [userData, setUserData] = useState<User>();  
+  const [isLoading, setIsLoading] = useState<boolean>( false );
+
+  useEffect(() => {
+    console.log( userData?.nameUser );
+  }, [ userData ])
 
   return (
-    <div>
+    <div className="container">
 
-      <SearchBar setUser={ setUser } />
+      <SearchBar setUserData={ setUserData } />
+
+      { isLoading && <div className="spinner"></div> }
+      {/* {
+         user &&
+         <div>
+            <h1> test view </h1>
+            <span> hellow viewer from spin </span>
+        </div>
+      } */} 
 
     </div>
   )
