@@ -11,13 +11,14 @@ interface SearchBarProps {
 
 export const SearchBar = ( { setNameToSearch }: SearchBarProps ) => {
 
-  const { nameUser, onChange } = useForm({
+  const { nameUser, onChange, reset } = useForm({
     nameUser: ''
   });
 
   const handleSubmit = async( event: FormEvent<HTMLFormElement> ) => {
     event.preventDefault();
     setNameToSearch( nameUser );
+    reset();
   }
 
   return (

@@ -10,9 +10,9 @@ export const useForm = <T>( initialState: T ) => {
 	
 	const [formData, setFormData] =  useState( initialState );
 
-	// const reset = () => {
-	// 	setValues( initialState );
-	// }
+	const reset = () => {
+		setFormData( initialState );
+	}
 
 	const onChange = ( event: ChangeEvent<HTMLInputElement> ) => {
 
@@ -27,7 +27,8 @@ export const useForm = <T>( initialState: T ) => {
     ...formData,
 
     formData,
-    onChange
+    onChange,
+    reset
   }
   
 	

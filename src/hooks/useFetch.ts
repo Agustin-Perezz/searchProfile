@@ -3,21 +3,21 @@ import { getProfileData } from '../services';
 import { User } from '../models/User';
 
 interface PropsState { 
-  data: User | undefined | [];
+  data: User | undefined | null;
   loading: boolean;
 }
 
 export const useFetch = ( endPoint: string, user: string ) => {
 
   const [state, setState] = useState<PropsState>({
-    data: [],
+    data: null,
     loading: false 
   });
 
   useEffect(() => {
 
     const getData = async() => {
-      setState({ data: [], loading: true });
+      setState({ data: null, loading: true });
       const data = await getProfileData( user );
       setTimeout(() => {
         setState({

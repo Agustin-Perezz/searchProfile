@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { SearchBar, Error, Loading } from "../components"
+import { SearchBar, Error, Loading, ProfileComponent, ReposComponent } from "../components"
 import { useFetch } from '../hooks/useFetch';
 
 export const DefaultPage = () => {
@@ -7,6 +7,7 @@ export const DefaultPage = () => {
   const [nameToSearch, setNameToSearch] = useState<string>('');
 
   const { loading, data } = useFetch( 'https://api.github.com/users/', nameToSearch );
+  console.log(`Data es: ${ data?.name }`)
 
   return (
     <div className="main">
@@ -18,14 +19,13 @@ export const DefaultPage = () => {
 
         { nameToSearch.length !== 0 && data === undefined && <Error /> }
 
-        {/* { userData === undefined && nameToSearch?.length !== 0 && <Error /> } */}
-        {/* {
-          user &&
-          <div>
-              <h1> test view </h1>
-              <span> hellow viewer from spin </span>
+        {
+          data !== null && data !== undefined &&
+          <div className="test">
+            <ProfileComponent />
+            <ReposComponent />
           </div>
-        } */} 
+        }
 
       </div>
     </div>
