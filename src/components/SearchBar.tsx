@@ -1,25 +1,23 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 import { useForm } from '../hooks';
-import { Dispatch, FormEvent } from 'react';
+import { FormEvent } from 'react';
 import { User } from '../models/User';
-import React from 'react';
-// import { PropsStateUser } from '../models/User';
+import { getProfileData } from '../services';
 
 interface SearchBarProps {
-  setUserData: React.Dispatch<React.SetStateAction<User | undefined>>
+  setNameToSearch: React.Dispatch<React.SetStateAction<string>>
 }
 
+export const SearchBar = ( { setNameToSearch }: SearchBarProps ) => {
 
-export const SearchBar = ( { setUserData }: SearchBarProps ) => {
-
-  const { nameUser, onChange, formData } = useForm({
+  const { nameUser, onChange } = useForm({
     nameUser: ''
   });
 
-  const handleSubmit = ( event: FormEvent<HTMLFormElement> ) => {
+  const handleSubmit = async( event: FormEvent<HTMLFormElement> ) => {
     event.preventDefault();
-    setUserData( formData );
+    setNameToSearch( nameUser );
   }
 
   return (

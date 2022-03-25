@@ -1,30 +1,33 @@
-import { useEffect, useState } from "react"
-import { SearchBar } from "../components"
-import { User } from '../models/User';
+import { useState } from "react"
+import { SearchBar, Error, Loading } from "../components"
+import { useFetch } from '../hooks/useFetch';
 
 export const DefaultPage = () => {
+  
+  const [nameToSearch, setNameToSearch] = useState<string>('');
 
-  const [userData, setUserData] = useState<User>();  
-  const [isLoading, setIsLoading] = useState<boolean>( false );
-
-  useEffect(() => {
-    console.log( userData?.nameUser );
-  }, [ userData ])
+  const { loading, data } = useFetch( 'https://api.github.com/users/', nameToSearch );
 
   return (
-    <div className="container">
+    <div className="main">
+      <div className="container">
+                
+        <SearchBar setNameToSearch={ setNameToSearch } />
 
-      <SearchBar setUserData={ setUserData } />
+        { loading && <Loading /> }
 
-      { isLoading && <div className="spinner"></div> }
-      {/* {
-         user &&
-         <div>
-            <h1> test view </h1>
-            <span> hellow viewer from spin </span>
-        </div>
-      } */} 
+        { nameToSearch.length !== 0 && data === undefined && <Error /> }
 
+        {/* { userData === undefined && nameToSearch?.length !== 0 && <Error /> } */}
+        {/* {
+          user &&
+          <div>
+              <h1> test view </h1>
+              <span> hellow viewer from spin </span>
+          </div>
+        } */} 
+
+      </div>
     </div>
   )
 }
