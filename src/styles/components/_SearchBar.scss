@@ -1,21 +1,26 @@
 
 form {
   position: relative;
+  width: 300px;
 }
 
 input {
+  outline: none;
   border: 0.3px solid #B7C8D9;
   border-radius: 5px;
   background-color: transparent;
-  padding: 15px;
+  padding: 15px 15px 15px 45px;
   color: white;
   height: 40px;
   width: 100%;
+  font-size: 15px;
+  font-family: 'Nunito', sans-serif;
 }  
 
-button {
+.form__button {
   background-color: transparent;
   padding-right: 15px;
+  cursor: pointer;
   color: white;
   border: none;
   border-radius: 50%;
@@ -23,4 +28,19 @@ button {
   top: 0;
   right: 0;
   height: 40px;
+
+  &:hover {
+    color: #B7C8D9;
+  }
+
+}
+
+.icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px; 
+  padding: 8px 0px 0px 10px;
+  padding-right: 20px;
+  color: #6d98dd !important;
 }

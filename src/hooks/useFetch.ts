@@ -7,7 +7,7 @@ interface PropsState {
   loading: boolean;
 }
 
-export const useFetch = ( endPoint: string, user: string ) => {
+export const useFetch = ( endPoint: string, user?: string ) => {
 
   const [state, setState] = useState<PropsState>({
     data: null,
@@ -27,7 +27,7 @@ export const useFetch = ( endPoint: string, user: string ) => {
       }, 200);
     }
 
-    if ( user.length !== 0 ) {
+    if ( user?.length !== 0 ) {
       getData();
     }
 

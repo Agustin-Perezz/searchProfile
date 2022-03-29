@@ -16,7 +16,8 @@ export const getProfileData = async ( nameUser: string | undefined ) => {
       location: data.location,
       public_repos: data.public_repos,
       twitter_username: data.twitter_username,
-      bio: data.bio
+      bio: data.bio,
+      repos_url: data.repos_url,
     };
 
   } catch (error) {

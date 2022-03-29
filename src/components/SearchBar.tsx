@@ -1,9 +1,8 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 import { useForm } from '../hooks';
 import { FormEvent } from 'react';
-import { User } from '../models/User';
-import { getProfileData } from '../services';
+import { faGithubAlt } from '@fortawesome/free-brands-svg-icons';
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 
 interface SearchBarProps {
   setNameToSearch: React.Dispatch<React.SetStateAction<string>>
@@ -23,15 +22,16 @@ export const SearchBar = ( { setNameToSearch }: SearchBarProps ) => {
 
   return (
     <form onSubmit={ handleSubmit }> 
-      {/* <img src='../assets/logo_github_icon_143196.png' alt="ashe" /> */}
+      <FontAwesomeIcon icon={ faGithubAlt } className='icon'/>
       <input 
         type='text'
+        autoComplete='off'
         placeholder='search user...'
         onChange={ onChange }
         name='nameUser'
         value={ nameUser }
       /> 
-      <button type='submit'> 
+      <button type='submit' className='form__button'> 
         <FontAwesomeIcon icon={ faMagnifyingGlass }/>
       </button>
     </form>

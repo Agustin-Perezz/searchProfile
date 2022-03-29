@@ -1,11 +1,5 @@
 import { ChangeEvent, useState } from "react"
 
-interface Props {
-  values: {};
-  handleInputChange: ({ target }: any) => void;
-  reset?: () => void;
-}
-
 export const useForm = <T>( initialState: T ) => {
 	
 	const [formData, setFormData] =  useState( initialState );

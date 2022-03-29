@@ -1,6 +1,12 @@
+import { useState } from 'react';
 
-export const ReposComponent = () => {
+export const ReposComponent = ({ repoUrl }: { repoUrl: string }) => {
+
+  // const [dataRepo, setDataRepo ] = useState(second)
+  
   return (
-    <div>ReposComponent</div>
+    <pre>
+      { JSON.stringify( repoUrl, null, 5 ) }
+    </pre>
   )
 }

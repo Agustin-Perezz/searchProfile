@@ -1,6 +1,9 @@
+import { User } from '../models/User';
 
-export const ProfileComponent = () => {
+export const ProfileComponent = ({ data }: { data: User }) => {
   return (
-    <div>ProfileComponent</div>
+    <div>
+      <img src={ data.avatar_url } alt="" />
+    </div>
   )
 }
