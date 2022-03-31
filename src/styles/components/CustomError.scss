@@ -1,20 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap');
+
 .custom__error {
     display: flex;
     justify-content: center;
     align-items: center;
     position: absolute;
+    margin: auto;
     border-radius: 7px;
-    background-color: rgb(199, 64, 64);
-    color: white;
+    color: #DA3633;
+    background-color: #21262D;
+    border: 0.5px solid #6B2A2B;
     padding: 10px;
-    box-shadow: 3px 2px 9px 0px rgba(94,90,90,0.75);
-    -webkit-box-shadow: 3px 2px 9px 0px rgba(94,90,90,0.75);
-    -moz-box-shadow: 3px 2px 9px 0px rgba(94,90,90,0.75);
+    margin: 15px;
     animation-duration: 1.5s;
-    
-    h5 {
+    font-family: 'Nunito', sans-serif;
+
+    h3 {
         margin: 0;
         margin-left: 5px;
+        font-size: 15px;
     }
 
 }

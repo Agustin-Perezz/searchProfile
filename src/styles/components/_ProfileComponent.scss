@@ -9,6 +9,7 @@
   &__img { 
     margin: 20px 15px;
     height: 280px;
+    min-height: 280px;
     border-radius: 5px;
     border: 0.5px solid white; 
     object-fit: cover;
@@ -74,18 +75,18 @@
     justify-content: center;
     align-items: center;
     margin: 30px 20px;
-    background-color: #8a7c4f;
+    background-color: #272114;
     padding: 5px 10px; 
     border-radius: 5px;
-    border: 1px solid #635426;
+    border: 1px solid #62470F;
     
     svg {
-      height: 35px;
+      height: 25px;
       color: #d8ae30;
     }
 
     p {
-      color: rgb(46, 46, 40);
+      color: rgb(204, 203, 203);
       text-align: center;
       font-family: 'Quicksand', sans-serif;
       padding-left: 10px;

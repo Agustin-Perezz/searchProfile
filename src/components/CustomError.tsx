@@ -24,9 +24,8 @@ export const CustomError = ({ dataChange }: { dataChange: undefined }) => {
     <>
         {
           <div className={`custom__error ${ fadeProp }`}>
-            {/* <BiErrorCircle /> */}
             <FontAwesomeIcon icon={ faCircleExclamation } />
-            <h5> Pokemon is not found! </h5> 
+            <h3> User not found. </h3> 
           </div>
         }
     </>

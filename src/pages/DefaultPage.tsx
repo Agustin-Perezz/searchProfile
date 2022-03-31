@@ -15,12 +15,13 @@ export const DefaultPage = () => {
       <div className="container">
                 
         <FontAwesomeIcon icon={ faGithub } className='icon__git-hub'/>
-
         <SearchBar setNameToSearch={ setNameToSearch } />
 
         { loading && <Loading /> }
 
-        { nameToSearch.length !== 0 && data === undefined && <CustomError dataChange={ data } /> }
+        <div className="error__container">
+          { nameToSearch.length !== 0 && data === undefined && <CustomError dataChange={ data } /> }
+        </div> 
         
         {
           data !== null && data !== undefined &&
