@@ -5,10 +5,17 @@
   align-items: center;
   text-align: center;
   height: 100vh;
-  color: white;
 }
 
 .icon__git-hub {
   height: 70px;
   margin-bottom: 40px;
+  color: white;
+}
+
+.container__data {
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+  margin-top: 40px;
 }

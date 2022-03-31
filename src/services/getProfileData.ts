@@ -13,11 +13,14 @@ export const getProfileData = async ( nameUser: string | undefined ) => {
       name: data.name,
       avatar_url: data.avatar_url,
       followers: data.followers,
+      following: data.following,
       location: data.location,
       public_repos: data.public_repos,
       twitter_username: data.twitter_username,
       bio: data.bio,
       repos_url: data.repos_url,
+      blog: data.blog,
+      html_url: data.html_url,
     };
 
   } catch (error) {

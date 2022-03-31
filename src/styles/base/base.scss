@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&family=Quicksand:wght@500&family=Source+Serif+Pro:ital@1&display=swap');
 * {
   box-sizing: border-box;
   padding: 0;
@@ -11,4 +10,8 @@ body {
   width: 100vw;
   overflow-x: hidden;
   background-color: #0D1117;
+}
+
+a {
+  text-decoration: none;
 }

@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { SearchBar, Error, Loading, ProfileComponent, ReposComponent } from "../components"
+import { SearchBar, Loading, ProfileComponent, ReposComponent, CustomError } from "../components"
 import { useFetch } from '../hooks/useFetch';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
@@ -14,19 +14,19 @@ export const DefaultPage = () => {
     <div className="main">
       <div className="container">
                 
-        <FontAwesomeIcon icon={ faGithub} className='icon__git-hub'/>
+        <FontAwesomeIcon icon={ faGithub } className='icon__git-hub'/>
 
         <SearchBar setNameToSearch={ setNameToSearch } />
 
         { loading && <Loading /> }
 
-        { nameToSearch.length !== 0 && data === undefined && <Error /> }
+        { nameToSearch.length !== 0 && data === undefined && <CustomError dataChange={ data } /> }
         
         {
           data !== null && data !== undefined &&
-          <div className="test">
+          <div className="container__data">
             <ProfileComponent data={ data } />
-            <ReposComponent repoUrl={ data.repos_url } />
+            {/* <ReposComponent repoUrl={ data.repos_url } /> */}
           </div>
 
         }
