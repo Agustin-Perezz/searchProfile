@@ -1,58 +1,65 @@
 import { User } from '../models/User';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHouseChimneyUser, faLocationDot, faTriangleExclamation, faUserGroup } from '@fortawesome/free-solid-svg-icons';
-import { faGithubSquare } from '@fortawesome/free-brands-svg-icons';
+import { faHouseChimneyUser, faLink, faLocationDot, faTriangleExclamation, faUserGroup } from '@fortawesome/free-solid-svg-icons';
+import { faGithubSquare, faTwitter } from '@fortawesome/free-brands-svg-icons';
 
 export const ProfileComponent = ({ data }: { data: User }) => {
   return (
     <div className='profile'>
-      <img src={ data.avatar_url }  alt="" className='profile__img'/>
       <div className="profile__block-1">
-        <div className="profile__name-location">
-          <h3> Name: { data.name } </h3>
-          <div className="profile__location">
-            <FontAwesomeIcon icon={ faLocationDot } />
-            <h3> { data.location } </h3>
+        <div className="profile__general">
+          <img src={ data.avatar_url }  alt="" className='profile__img'/>
+          <div className="descriptions">
+            <span className='descriptions__name'> { data.name } </span>
+            <h6> @{ data. short_name } </h6>
+            <span className='descriptions__date'> Joined { data.created_at } </span>
           </div>
         </div>
-          <div className="follows">
-            <div className="follows__followers">
-              <FontAwesomeIcon icon={ faUserGroup } />
-              <h5> followers: { data.followers } </h5>
-              <span> - </span>
-            </div>
-            <div className="follows__following">
-              <h5> following: { data.following } </h5>
-            </div>
-          </div>
         {
           data.bio 
           ? 
           <div className='profile__bio'>
-            <h4> Biography </h4>
             <p> { data.bio } </p>
           </div>
           :
           <div className='profile__not-bio'>
             <FontAwesomeIcon icon={ faTriangleExclamation } />
-            <p> The user has no description </p>
+            <p> This profile has no bio. </p>
           </div>
         }
-        <div className="profile__buttons">
-          {
-            data.blog 
-            &&
-            <a href={ data.blog } className='profile__buttons-blog' target="_blank">
-              <FontAwesomeIcon icon={ faHouseChimneyUser } />
-              Blog
-            </a>
-          }
-          <a href={ data.html_url } className='profile__buttons-github' target='_blank' >
-            <FontAwesomeIcon icon={ faGithubSquare } />
-            GitHub
-          </a>
-        </div>
+      </div>
+      <div className="profile__block-2">
+        <div className="follows">
+          <div className="follows__followers">
+            <FontAwesomeIcon icon={ faUserGroup } />
+            <h5> followers: { data.followers } </h5>
+            <span> - </span>
           </div>
+          <div className="follows__following">
+            <h5> following: { data.following } </h5>
+          </div>
+        </div>
+        <div className="profile__buttons">
+          <div className="button">
+            <FontAwesomeIcon icon={ faLocationDot } className='button__location'/>
+            { data.location }
+          </div>
+          <div className={`${ data.twitter_username ? 'on' : 'off'} button`} >
+            <FontAwesomeIcon icon={ faTwitter } className='button__twiter'/>
+            { data.twitter_username ? data.twitter_username : 'Not Available' }
+          </div>
+          <div className="button">
+            <FontAwesomeIcon icon={ faLink } />
+            <a href={ data.blog ? data.blog : '#' } className={`${ data.blog ? 'on' : 'off'} blog`} target={ data.blog && '_blank'}> 
+              { data.blog ? 'Blog' : 'Not Available'} 
+            </a>
+          </div>
+          <div className="button">
+            <FontAwesomeIcon icon={ faGithubSquare } />
+            <a href={ data.html_url } className='github' target='_blank'> Git-Hub </a>
+          </div>
+        </div>
+      </div>
     </div>
   )
 

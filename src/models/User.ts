@@ -1,6 +1,7 @@
 
 export interface User {
   name: string;
+  short_name: string;
   avatar_url?: string;
   followers: number;
   following: number;
@@ -11,4 +12,5 @@ export interface User {
   repos_url: string;
   html_url: string;
   blog?: string;
+  created_at: string;
 }
