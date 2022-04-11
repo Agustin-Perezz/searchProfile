@@ -17,13 +17,13 @@ export const ListRepos = ({ repoUrl }: { repoUrl: string[] | undefined }) => {
   }, []);
 
   return (
-    <div className='all__repos'>
+    <div className='all__repos animate__animated animate__zoomIn'>
 
       <h4> Public Repositories </h4>
 
       { dataRepos === undefined && <LoadingTrePoints /> }
 
-      { repoUrl!.length <= 0 && <span> has no repos. </span>}
+      { repoUrl!.length <= 0 && <h6> Has no repositories yet. </h6>}
 
       <div className="container__repos">
         { 

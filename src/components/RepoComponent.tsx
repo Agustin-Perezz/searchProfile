@@ -14,7 +14,7 @@ export const RepoComponent = ({
 }: Repos ) => {
 
   return (
-    <div className='repo'>
+    <div className='repo animate__animated animate__fadeIn'>
       <div className="repo__left">
         <img src={ avatar } alt="perri" />
         <div className='repo__info'>

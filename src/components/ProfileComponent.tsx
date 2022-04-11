@@ -5,7 +5,7 @@ import { faGithubSquare, faTwitter } from '@fortawesome/free-brands-svg-icons';
 
 export const ProfileComponent = ({ data }: { data: User }) => {
   return (
-    <div className='profile'>
+    <div className='profile animate__animated animate__zoomIn'>
       <div className="profile__block-1">
         <div className="profile__general">
           <img src={ data.avatar_url }  alt="" className='profile__img'/>
