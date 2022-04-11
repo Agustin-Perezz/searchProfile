@@ -1,5 +1,4 @@
+export { RepoComponent } from './RepoComponent';
 export { ProfileComponent } from './ProfileComponent';
-export { ReposComponent } from './ReposComponent';
-export { Loading } from './Loading';
-export { CustomError } from "./CustomError";
+export { ListRepos } from './ListRepos';
 export { SearchBar } from "./SearchBar";

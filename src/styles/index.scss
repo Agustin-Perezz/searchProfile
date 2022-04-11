@@ -7,6 +7,9 @@
 // Components
 @import './components/SearchBar';
 @import './components/Error';
-@import './components/Loading';
 @import './components/ProfileComponent';
-@import './components/CustomError';
+@import './components/Loaders-Errors/LoadingTrePoints';
+@import './components/Loaders-Errors/Loading';
+@import './components/Loaders-Errors/CustomError';
+@import './components/ListRepos';
+@import './components/RepoComponent';

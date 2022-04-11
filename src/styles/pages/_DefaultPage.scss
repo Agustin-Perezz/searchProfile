@@ -4,23 +4,28 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  height: 100vh;
+  height: 100%;
+  min-height: 100vh;
 }
 
 .icon__git-hub {
   height: 70px;
-  margin-bottom: 40px;
+  margin: 40px;
   color: white;
 }
 
 .container__data {
-  display: flex;
-  justify-content: center;
-  align-items: center;  
   margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .error__container {
   display: flex;
   justify-content: center;
+}
+
+.container {
+  width: 100vw;
 }

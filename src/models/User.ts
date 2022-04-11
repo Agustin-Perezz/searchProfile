@@ -9,8 +9,8 @@ export interface User {
   public_repos: number;
   twitter_username?: string;
   bio?: string;
-  repos_url: string;
   html_url: string;
   blog?: string;
   created_at: string;
+  repos_url?: string[];
 }

@@ -1,6 +1,6 @@
 import { User } from '../models/User';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHouseChimneyUser, faLink, faLocationDot, faTriangleExclamation, faUserGroup } from '@fortawesome/free-solid-svg-icons';
+import { faLink, faLocationDot, faTriangleExclamation, faUserGroup } from '@fortawesome/free-solid-svg-icons';
 import { faGithubSquare, faTwitter } from '@fortawesome/free-brands-svg-icons';
 
 export const ProfileComponent = ({ data }: { data: User }) => {
@@ -44,7 +44,7 @@ export const ProfileComponent = ({ data }: { data: User }) => {
             <FontAwesomeIcon icon={ faLocationDot } className='button__location'/>
             { data.location }
           </div>
-          <div className={`${ data.twitter_username ? 'on' : 'off'} button`} >
+          <div className='button'>
             <FontAwesomeIcon icon={ faTwitter } className='button__twiter'/>
             { data.twitter_username ? data.twitter_username : 'Not Available' }
           </div>

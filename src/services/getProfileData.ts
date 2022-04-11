@@ -10,6 +10,15 @@ export const getProfileData = async ( nameUser: string | undefined ) => {
     
     if ( data.message === 'Not Found' ) return undefined;
 
+    const resp_repos = await fetch(`${ BASE_URL }${ nameUser }/repos`);
+    const repos = await resp_repos.json();
+
+    const repos_url: string[] = [];
+    repos.map(( value: any ) => {
+      if ( value.fork ) return;
+      repos_url.push( value.url );
+    })
+
     const joined: string = transformDate( data.created_at );
 
     return {
@@ -19,13 +28,12 @@ export const getProfileData = async ( nameUser: string | undefined ) => {
       followers: data.followers,
       following: data.following,
       location: data.location,
-      public_repos: data.public_repos,
       twitter_username: data.twitter_username,
       bio: data.bio,
-      repos_url: data.repos_url,
       blog: data.blog,
       html_url: data.html_url,
       created_at: joined,
+      repos_url 
     };
 
   } catch (error) {

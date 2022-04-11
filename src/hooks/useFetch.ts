@@ -19,12 +19,10 @@ export const useFetch = ( endPoint: string, user?: string ) => {
     const getData = async() => {
       setState({ data: null, loading: true });
       const data = await getProfileData( user );
-      setTimeout(() => {
         setState({
           data,
           loading: false
         })
-      }, 200);
     }
 
     if ( user?.length !== 0 ) {

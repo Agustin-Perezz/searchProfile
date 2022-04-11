@@ -1,8 +1,9 @@
 import { useState } from "react"
-import { SearchBar, Loading, ProfileComponent, ReposComponent, CustomError } from "../components"
+import { SearchBar, ProfileComponent, ListRepos } from "../components"
 import { useFetch } from '../hooks/useFetch';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { Loading, CustomError } from '../components/Loaders-Errors';
 
 export const DefaultPage = () => {
   
@@ -27,9 +28,8 @@ export const DefaultPage = () => {
           data !== null && data !== undefined &&
           <div className="container__data">
             <ProfileComponent data={ data } />
-            {/* <ReposComponent repoUrl={ data.repos_url } /> */}
+            <ListRepos repoUrl={ data.repos_url } />
           </div>
-
         }
 
       </div>
