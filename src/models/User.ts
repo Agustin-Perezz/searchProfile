@@ -6,7 +6,6 @@ export interface User {
   followers: number;
   following: number;
   location: string;
-  public_repos: number;
   twitter_username?: string;
   bio?: string;
   html_url: string;
