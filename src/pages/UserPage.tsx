@@ -21,7 +21,7 @@ export const UserPage = () => {
         { loading && <Loading /> }
 
         <div className="error__container">
-          { !loading && dataUser === undefined && <CustomError dataChange={ dataUser } /> }
+          { !loading && nameToSearch.length !== 0 && dataUser === undefined && <CustomError dataChange={ dataUser } /> }
         </div> 
         
         {

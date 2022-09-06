@@ -6,7 +6,6 @@
   border-radius: 5px;
   border: 1px solid #21262D;
   margin: 0px 30px 10px 30px;
-  // margin: 0 auto;
   padding-bottom: 5px;
 
   &__general {
@@ -23,20 +22,20 @@
 
       &__name {
         color: white;
-        font-size: 18px;
+        font-size: 20px;
         font-family: 'Quicksand', sans-serif;
         margin: 10px 0;
       }
       
       &__date {
         margin: 10px 0;
-        font-size: 14px;
+        font-size: 15px;
         color: rgb(214, 211, 211);
       }
 
       h6 {
         color: #2b69b1;
-        font-size: 13px;
+        font-size: 15px;
       }
 
     }
@@ -111,7 +110,7 @@
 
     .off {
       color: rgb(180, 177, 177);
-      cursor: not-allowed;
+      pointer-events: none;
     }
 
     .button {

@@ -50,7 +50,7 @@ export const ProfileComponent = ({ data }: { data: User }) => {
           </div>
           <div className="button">
             <FontAwesomeIcon icon={ faLink } />
-            <a href={ data.blog ? data.blog : '#' } className={`${ data.blog ? 'on' : 'off'} blog`} target={ data.blog && '_blank'}> 
+            <a href={ data.blog ? data.blog : '#' } aria-disabled='true' className={`${ data.blog ? 'on' : 'off'} blog`} target={ data.blog && '_blank' }> 
               { data.blog ? 'Blog' : 'Not Available'} 
             </a>
           </div>
