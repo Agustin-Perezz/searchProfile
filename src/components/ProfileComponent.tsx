@@ -16,7 +16,7 @@ export const ProfileComponent = ({ data }: { data: User }) => {
           </div>
         </div>
         {
-          data.bio 
+          data.bio
           ? 
           <div className='profile__bio'>
             <p> { data.bio } </p>

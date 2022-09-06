@@ -1,35 +1,40 @@
 import { useState, useEffect } from 'react';
-import { getProfileData } from '../services';
 import { User } from '../models/User';
+import { Repos } from '../models/Repo';
+import { getDataUser } from '../services/';
 
 interface PropsState { 
-  data: User | undefined | null;
+  dataUser: {
+    userInformation: User; 
+    repositoriesData: Repos[];
+  } | undefined;
   loading: boolean;
 }
 
-export const useFetch = ( endPoint: string, user?: string ) => {
+interface Props { 
+  nameToSearch: string;
+}
+
+export const useFetch = ({nameToSearch} : Props ) => {
 
   const [state, setState] = useState<PropsState>({
-    data: null,
+    dataUser: undefined,
     loading: false 
   });
 
   useEffect(() => {
-
+    
     const getData = async() => {
-      setState({ data: null, loading: true });
-      const data = await getProfileData( user );
-        setState({
-          data,
-          loading: false
-        })
+      setState({ dataUser: undefined, loading: true });
+      const data = await getDataUser({ nameUser: nameToSearch });
+      setState({ dataUser: data, loading: false });
     }
 
-    if ( user?.length !== 0 ) {
+    if ( nameToSearch ) {
       getData();
     }
-
-  }, [ user ])
+    
+  }, [ nameToSearch ])
   
   return state;
   

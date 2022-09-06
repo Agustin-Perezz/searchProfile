@@ -19,7 +19,6 @@ export const CustomError = ({ dataChange }: { dataChange: undefined }) => {
     };
   }, [ dataChange ])
   
-
   return (
     <>
         {

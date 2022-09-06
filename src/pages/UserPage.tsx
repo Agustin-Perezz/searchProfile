@@ -1,15 +1,15 @@
 import { useState } from "react"
 import { SearchBar, ProfileComponent, ListRepos } from "../components"
-import { useFetch } from '../hooks/useFetch';
+import { useFetch } from '../hooks';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { Loading, CustomError } from '../components/Loaders-Errors';
 
-export const DefaultPage = () => {
+export const UserPage = () => {
   
   const [nameToSearch, setNameToSearch] = useState<string>('');
 
-  const { loading, data } = useFetch( 'https://api.github.com/users/', nameToSearch );
+  const { loading, dataUser } = useFetch({ nameToSearch });
   
   return (
     <div className="main">
@@ -21,14 +21,14 @@ export const DefaultPage = () => {
         { loading && <Loading /> }
 
         <div className="error__container">
-          { nameToSearch.length !== 0 && data === undefined && <CustomError dataChange={ data } /> }
+          { !loading && dataUser === undefined && <CustomError dataChange={ dataUser } /> }
         </div> 
         
         {
-          data !== null && data !== undefined &&
+          dataUser !== null && dataUser !== undefined &&
           <div className="container__data">
-            <ProfileComponent data={ data } />
-            <ListRepos repoUrl={ data.repos_url } />
+            <ProfileComponent data={ dataUser.userInformation } />
+            <ListRepos dataRepos={ dataUser.repositoriesData } />
           </div>
         }
 
