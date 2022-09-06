@@ -1,18 +1,24 @@
-# URL PAGINA: https://agustin-perezz.github.io/searchProfile/
- 
-La página es un pequeño buscador de perfiles en github que consume la API de github.
+## SearchProfile App
 
-Para su construcción se usaron las siguientes tecnologías: ( react, typescript, sass ).
+*Esta aplicación fue inicializada con* [Vite](https://vitejs.dev/)
 
-Se utilizó vite-js con el template de TS para crear el proyecto.
+La finalidad de este proyecto fue permitirle al usuario buscar su perfil en GitHub, así como también visualizar sus repositorios públicos.
 
+Link Deploy: https://agustin-perezz.github.io/searchProfile/
 
-## Clonar la app.
-```bash
-  git clone https://github.com/Agustin-Perezz/searchProfile
-  cd <nombre-carpeta>
-  npm i
-  npm start
-  listo
-```
-    
+## Instalación
+
+1. Clonar el proyecto.
+2. Instalar las dependencias ejecutando el comando `npm install`.
+3. Crear una archivo `.env` con la siguiente variable: `VITE_API_URL`: `https://api.github.com/users/` 
+4. Ejecute `npm run dev` y listo.
+
+## Construido con
+
+* [React](https://es.reactjs.org/)
+* [Sass](https://sass-lang.com/)
+* [TypeScript](https://www.typescriptlang.org/)
+
+## Autor
+
+Agustin Nicolas Perez - [Linkedin](https://www.linkedin.com/in/agustinperez-front-end-developer/).
